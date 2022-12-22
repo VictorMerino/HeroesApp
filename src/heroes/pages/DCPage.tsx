@@ -1,5 +1,10 @@
 import React from 'react'
+import { MainLayout } from '../../ui'
 
 export const DCPage = () => {
-  return <div>DCPage</div>
+  return (
+    <MainLayout>
+      <div>DCPage</div>
+    </MainLayout>
+  )
 }
