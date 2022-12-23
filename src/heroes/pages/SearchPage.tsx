@@ -5,6 +5,7 @@ import { useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 
 import { MainLayout } from '../../ui'
 import { HeroCard } from '../components'
+import { getHeroesByName } from '../helpers'
 
 export const SearchPage = () => {
   const { searchText, onInputChange } = useForm({ searchText: '' })
@@ -13,11 +14,11 @@ export const SearchPage = () => {
 
   const [searchParams] = useSearchParams()
   const q = searchParams.get('q')
+  const heroes = getHeroesByName(q as string)
+  console.log(heroes)
 
-  console.log(q)
   const onSearchSubmit = (e: SubmitEvent) => {
     e.preventDefault()
-    console.log({ searchText })
     if (searchText.trim().length < 3) return
 
     navigate(`?q=${searchText}`)
@@ -47,7 +48,9 @@ export const SearchPage = () => {
             <div className="alert alert-danger">
               No hero with <strong>{q}</strong>
             </div>
-            {/* <HeroCard hero={hero} /> */}
+            {heroes?.map(hero => (
+              <HeroCard hero={hero} key={hero.id} />
+            ))}
           </div>
         </div>
       </>
