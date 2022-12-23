@@ -8,14 +8,13 @@ import { HeroCard } from '../components'
 import { getHeroesByName } from '../helpers'
 
 export const SearchPage = () => {
-  const { searchText, onInputChange } = useForm({ searchText: '' })
-
   const navigate = useNavigate()
 
   const [searchParams] = useSearchParams()
   const q = searchParams.get('q')
   const heroes = getHeroesByName(q as string)
-  console.log(heroes)
+
+  const { searchText, onInputChange } = useForm({ searchText: q || '' })
 
   const onSearchSubmit = (e: SubmitEvent) => {
     e.preventDefault()
