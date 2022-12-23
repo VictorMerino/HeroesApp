@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { MainLayout } from '../../ui'
 import { getHeroById, getHeroImgUrl } from '../helpers'
@@ -10,7 +10,7 @@ type HeroParams = {
 export const HeroPage = () => {
   const navigate = useNavigate()
   const { id } = useParams<HeroParams>()
-  const hero = getHeroById(id as string)
+  const hero = useMemo(() => getHeroById(id as string), [id])
 
   const onNavigateBack = () => {
     let navigateTo = '/'
