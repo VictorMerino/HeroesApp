@@ -9,7 +9,7 @@ export const HeroList = ({ publisher }: { publisher: Publisher }) => {
       <h3>Publisher: {publisher}</h3>
       <ul>
         {heroes.map(hero => {
-          return <li>{hero.superhero}</li>
+          return <li key={hero.id}>{hero.superhero}</li>
         })}
       </ul>
     </>
