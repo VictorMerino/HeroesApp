@@ -19,7 +19,6 @@ export const SearchPage = () => {
   const onSearchSubmit = (e: SubmitEvent) => {
     e.preventDefault()
     // if (searchText.trim().length < 3) return
-
     navigate(`?q=${searchText}`)
   }
   return (
