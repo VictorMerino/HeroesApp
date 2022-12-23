@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactFragment } from 'react'
+import React, { ReactElement } from 'react'
 
 export const MainLayout = ({ children }: { children: ReactElement }) => {
   return (
