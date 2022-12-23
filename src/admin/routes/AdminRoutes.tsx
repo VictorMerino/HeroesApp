@@ -13,7 +13,7 @@ export const AdminRoutes = () => {
         <Route path="*" element={<AdminPage />} />
 
         {/*Profile page, edit heroes, etc... */}
-        {/* <Route path="/" element={<Navigate to="/marvel" />} /> */}
+        {/* <Route path="*" element={<Navigate to="/admin" />} /> */}
       </Routes>
     </>
   )
