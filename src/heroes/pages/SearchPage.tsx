@@ -1,8 +1,7 @@
 import React from 'react'
-import queryString from 'query-string'
 
 import { useForm } from '../../hooks/useForm'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 
 import { MainLayout } from '../../ui'
 import { HeroCard } from '../components'
@@ -11,9 +10,10 @@ export const SearchPage = () => {
   const { searchText, onInputChange } = useForm({ searchText: '' })
 
   const navigate = useNavigate()
-  const location = useLocation()
 
-  const { q = '' } = queryString.parse(location.search)
+  const [searchParams] = useSearchParams()
+  const q = searchParams.get('q')
+
   console.log(q)
   const onSearchSubmit = (e: SubmitEvent) => {
     e.preventDefault()
