@@ -34,12 +34,12 @@ export const HeroPage = () => {
         >
           Back to list
         </button>
-        <h1>{hero.id}</h1>
         <div className="row mt-5 animate__animated animate__fadeInLeft">
           <div className="col-4">
             <img src={imageUrl} alt="" className="img-thumbnail" />
           </div>
           <div className="col-8">
+            <h1>{hero.superhero}</h1>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
                 <strong>Alter Ego: </strong>
