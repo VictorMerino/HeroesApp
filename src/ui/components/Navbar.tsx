@@ -30,10 +30,6 @@ export const Navbar = () => {
             <NavLink className="nav-item nav-link" to="/search">
               Search
             </NavLink>
-
-            <NavLink className="nav-item nav-link" to="/hero">
-              Hero
-            </NavLink>
           </div>
         </div>
 
