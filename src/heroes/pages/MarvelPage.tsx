@@ -1,5 +1,10 @@
 import React from 'react'
+import { MainLayout } from '../../ui'
 
 export const MarvelPage = () => {
-  return <div>MarvelPage</div>
+  return (
+    <MainLayout>
+      <div>MarvelPage</div>
+    </MainLayout>
+  )
 }
