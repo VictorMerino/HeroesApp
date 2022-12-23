@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { useForm } from '../../hooks/useForm'
-import { useLocation, useNavigate, useSearchParams } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 
 import { MainLayout } from '../../ui'
 import { HeroCard } from '../components'
