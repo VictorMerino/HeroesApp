@@ -1,7 +1,7 @@
-export enum PUBLISHER {
+/* export enum PUBLISHER {
   DC = 'DC Comics',
   MARVEL = 'Marvel Comics',
-}
+} */
 
 export type Publisher = 'DC Comics' | 'Marvel Comics'
 
