@@ -1,8 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Hero } from '../types/Hero'
 
 export const HeroCard = ({ hero }: { hero: Hero }) => {
-  const imageUrl = `/public/images/heroes/${hero.id}-min.jpg`
+  const { id, superhero, alter_ego, characters, first_appearance } = hero
+  const imageUrl = `/public/images/heroes/${id}-min.jpg`
+
   return (
     <>
       <div className="col">
@@ -13,8 +16,21 @@ export const HeroCard = ({ hero }: { hero: Hero }) => {
             </div>
             <div className="col-8">
               <div className="card-body">
-                <h5 className="card-title">{hero.superhero}</h5>
-                <p className="card-text">{hero.alter_ego}</p>
+                <h5 className="card-title">{superhero}</h5>
+                <p className="card-text">{alter_ego}</p>
+                {alter_ego !== characters && (
+                  <>
+                    <hr />
+                    <small style={{ fontSize: '.5rem', lineHeight: '.25rem' }}>
+                      {characters}
+                    </small>
+                  </>
+                )}
+                <p className="card-text">
+                  <small className="text-muted">{first_appearance}</small>
+                </p>
+                <hr />
+                <Link to={`/hero/${id}`}>Más info</Link>
               </div>
             </div>
           </div>
