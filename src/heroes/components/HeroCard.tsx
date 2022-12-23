@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { getHeroImgUrl } from '../helpers'
 import { Hero } from '../types/Hero'
 
 const CharactersByEgo = ({
@@ -23,7 +24,7 @@ const CharactersByEgo = ({
 
 export const HeroCard = ({ hero }: { hero: Hero }) => {
   const { id, superhero, alter_ego, characters, first_appearance } = hero
-  const imageUrl = `/public/images/heroes/${id}-min.jpg`
+  const imageUrl = getHeroImgUrl(id)
 
   return (
     <>
