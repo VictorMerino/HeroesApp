@@ -32,7 +32,7 @@ export const HeroPage = () => {
             onNavigateBack()
           }}
         >
-          Back to list
+          &lt; Back to list
         </button>
         <div className="row mt-5 animate__animated animate__fadeInLeft">
           <div className="col-4">
