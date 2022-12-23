@@ -18,7 +18,7 @@ export const SearchPage = () => {
 
   const onSearchSubmit = (e: SubmitEvent) => {
     e.preventDefault()
-    if (searchText.trim().length < 3) return
+    // if (searchText.trim().length < 3) return
 
     navigate(`?q=${searchText}`)
   }
@@ -43,10 +43,15 @@ export const SearchPage = () => {
           <div className="col-12 col-sm-8">
             <h2>Results</h2>
             <hr />
-            <div className="alert alert-primary">Search a hero</div>
-            <div className="alert alert-danger">
-              No hero with <strong>{q}</strong>
-            </div>
+
+            {!q && <div className="alert alert-primary">Search a hero</div>}
+
+            {q && !heroes.length && (
+              <div className="alert alert-danger">
+                No hero with <strong>{q}</strong>
+              </div>
+            )}
+
             {heroes?.map(hero => (
               <HeroCard hero={hero} key={hero.id} />
             ))}
