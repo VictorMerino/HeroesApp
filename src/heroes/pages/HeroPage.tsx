@@ -11,10 +11,11 @@ export const HeroPage = () => {
   const { id } = useParams<HeroParams>()
   const hero = getHeroById(id as string)
 
-  console.log(hero)
+  if (!hero) return <>Hero not found</>
+
   return (
     <MainLayout>
-      <h1>{hero?.id}</h1>
+      <h1>{hero.id}</h1>
     </MainLayout>
   )
 }
