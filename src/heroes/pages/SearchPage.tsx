@@ -43,10 +43,14 @@ export const SearchPage = () => {
             <h2>Results</h2>
             <hr />
 
-            {!q && <div className="alert alert-primary">Search a hero</div>}
+            {!q && (
+              <div className="alert alert-primary animate__animated animate__fadeIn">
+                Search a hero
+              </div>
+            )}
 
             {q && !heroes.length && (
-              <div className="alert alert-danger">
+              <div className="alert alert-danger animate__animated animate__fadeIn">
                 No hero with <strong>{q}</strong>
               </div>
             )}
