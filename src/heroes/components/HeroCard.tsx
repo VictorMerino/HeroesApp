@@ -2,6 +2,25 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Hero } from '../types/Hero'
 
+const CharactersByEgo = ({
+  alter_ego,
+  characters,
+}: {
+  alter_ego: Hero['alter_ego']
+  characters: Hero['characters']
+}) => {
+  if (alter_ego === characters) return null
+
+  return (
+    <>
+      <hr />
+      <small style={{ fontSize: '.5rem', lineHeight: '.25rem' }}>
+        {characters}
+      </small>
+    </>
+  )
+}
+
 export const HeroCard = ({ hero }: { hero: Hero }) => {
   const { id, superhero, alter_ego, characters, first_appearance } = hero
   const imageUrl = `/public/images/heroes/${id}-min.jpg`
@@ -18,14 +37,10 @@ export const HeroCard = ({ hero }: { hero: Hero }) => {
               <div className="card-body">
                 <h5 className="card-title">{superhero}</h5>
                 <p className="card-text">{alter_ego}</p>
-                {alter_ego !== characters && (
-                  <>
-                    <hr />
-                    <small style={{ fontSize: '.5rem', lineHeight: '.25rem' }}>
-                      {characters}
-                    </small>
-                  </>
-                )}
+                <CharactersByEgo
+                  alter_ego={alter_ego}
+                  characters={characters}
+                />
                 <p className="card-text">
                   <small className="text-muted">{first_appearance}</small>
                 </p>
