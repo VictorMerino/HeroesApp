@@ -1,7 +1,7 @@
 import { heroes } from '../data/heroes'
 
 export const getHeroesByName = (name = '') => {
-  if (name.length === 0) return []
+  if (!name || name.length === 0) return []
 
   const trimmedName = name.toLocaleLowerCase().trim()
 
