@@ -13,10 +13,7 @@ export const HomePage = () => {
             <div className="card">
               <div className="card-body flex align-self-center">
                 <Link to={`/marvel`}>
-                  <img
-                    src={`/public/images/marvel-logo.png`}
-                    className="card-img"
-                  />
+                  <img src={`/images/marvel-logo.png`} className="card-img" />
                 </Link>
               </div>
             </div>
@@ -26,10 +23,7 @@ export const HomePage = () => {
             <div className="card">
               <div className="card-body flex align-self-center">
                 <Link to={`/dc`}>
-                  <img
-                    src={`/public/images/dc-logo.png`}
-                    className="card-img"
-                  />
+                  <img src={`/images/dc-logo.png`} className="card-img" />
                 </Link>
               </div>
             </div>
