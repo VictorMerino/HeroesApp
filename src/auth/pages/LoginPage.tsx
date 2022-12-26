@@ -8,7 +8,7 @@ export const LoginPage = () => {
 
   const onLogin = () => {
     //@ts-expect-error TS2722
-    login('Víctor')
+    login('Demo User')
     navigate('/admin')
   }
   return (
