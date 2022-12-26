@@ -1,4 +1,4 @@
-import { getItems, setItem } from '../../services'
+import { getItems, removeItem, setItem } from '../../services'
 
 export const getUser = () => {
   return getItems('user')
@@ -10,5 +10,5 @@ export const setUser = (user = {}) => {
 
 export const removeUser = () => {
   // TO-DO: check: better this way or do we need to remove the object?
-  setUser()
+  removeItem('user')
 }

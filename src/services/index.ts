@@ -1,1 +1,1 @@
-export { getItems, setItem } from './LocalStorageRepository'
+export { getItems, setItem, removeItem } from './LocalStorageRepository'
