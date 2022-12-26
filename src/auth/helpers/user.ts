@@ -7,13 +7,7 @@ const setUser = (user = {}) => {
 }
 
 const removeUser = () => {
-  // TO-DO: check: better this way or do we need to remove the object?
   removeItem('user')
 }
 
-const setLastPath = path => {
-  setItem(path, 'lastPath')
-}
-const checkLastPath = () => getItems('lastPath')
-
-export { getUser, setUser, removeUser, checkLastPath, setLastPath }
+export { getUser, setUser, removeUser }

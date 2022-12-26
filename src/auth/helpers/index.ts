@@ -1,7 +1,3 @@
-export {
-  getUser,
-  setUser,
-  removeUser,
-  checkLastPath,
-  setLastPath,
-} from './user'
+export { getUser, setUser, removeUser } from './user'
+
+export { checkLastPath, setLastPath } from './path'
