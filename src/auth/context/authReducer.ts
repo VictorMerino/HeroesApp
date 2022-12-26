@@ -10,12 +10,12 @@ export const authReducer = (state = {}, action) => {
       console.log(action)
       return {
         logged: true,
-        name: action.payload,
+        user: action.payload,
       }
     case creators.logout:
       return {
         logged: false,
-        name: null,
+        user: null,
       }
     default:
       return state
