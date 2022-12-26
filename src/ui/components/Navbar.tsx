@@ -3,6 +3,7 @@ import { Link, NavLink, useNavigate } from 'react-router-dom'
 
 import { HomeIcon } from '../../assets/svg/HomeIcon'
 import { AuthContext } from '../../auth'
+import { checkLastPath } from '../../auth/helpers'
 
 export const Navbar = () => {
   const navigate = useNavigate()
@@ -10,7 +11,8 @@ export const Navbar = () => {
 
   const onLogout = () => {
     logout()
-    navigate('/')
+    const navigateTo = checkLastPath() || '/'
+    navigate(navigateTo)
   }
 
   return (

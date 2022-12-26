@@ -7,6 +7,7 @@ import { AuthRoutes } from '../auth/routes/AuthRoutes'
 
 import { AuthRouter } from './AuthRouter'
 import { PrivateRouter } from './PrivateRouter'
+import { PublicRouter } from './PublicRouter'
 
 export const AppRouter = () => {
   return (
@@ -33,6 +34,14 @@ export const AppRouter = () => {
         />
 
         {/* Public routes */}
+        <Route
+          path="/*"
+          element={
+            <PublicRouter>
+              <HeroesRoutes />
+            </PublicRouter>
+          }
+        />
         <Route path="/*" element={<HeroesRoutes />} />
       </Routes>
     </>

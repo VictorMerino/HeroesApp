@@ -1,14 +1,19 @@
 import { getItems, removeItem, setItem } from '../../services'
 
-export const getUser = () => {
-  return getItems('user')
-}
+const getUser = () => getItems('user')
 
-export const setUser = (user = {}) => {
+const setUser = (user = {}) => {
   setItem(user, 'user')
 }
 
-export const removeUser = () => {
+const removeUser = () => {
   // TO-DO: check: better this way or do we need to remove the object?
   removeItem('user')
 }
+
+const setLastPath = path => {
+  setItem(path, 'lastPath')
+}
+const checkLastPath = () => getItems('lastPath')
+
+export { getUser, setUser, removeUser, checkLastPath, setLastPath }
