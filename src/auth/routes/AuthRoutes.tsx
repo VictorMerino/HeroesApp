@@ -8,6 +8,8 @@ export const AuthRoutes = () => {
     <>
       <Routes>
         <Route path="login" element={<LoginPage />} />
+
+        {/*Sign up page, etc... */}
       </Routes>
     </>
   )
