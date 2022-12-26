@@ -6,7 +6,7 @@ import { AdminRoutes } from '../admin/routes/AdminRoutes'
 import { AuthRoutes } from '../auth/routes/AuthRoutes'
 
 import { AuthRouter } from './AuthRouter'
-import { PrivateRoutes } from './PrivateRoutes'
+import { PrivateRouter } from './PrivateRouter'
 
 export const AppRouter = () => {
   return (
@@ -26,9 +26,9 @@ export const AppRouter = () => {
         <Route
           path="admin/*"
           element={
-            <PrivateRoutes>
+            <PrivateRouter>
               <AdminRoutes />
-            </PrivateRoutes>
+            </PrivateRouter>
           }
         />
 
