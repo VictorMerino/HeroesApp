@@ -38,7 +38,10 @@ export const Navbar = () => {
 
         <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 justify-content-end">
           <ul className="navbar-nav ml-auto">
-            <NavLink className="nav-item nav-link text-success" to="/login">
+            <NavLink
+              className="nav-item nav-link text-success"
+              to={authState && authState.name ? '/admin' : '/login'}
+            >
               {authState && authState.name ? authState.name.name : 'Login'}
             </NavLink>
             <button
