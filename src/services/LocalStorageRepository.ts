@@ -1,5 +1,5 @@
 export const getItems = (collection = 'user') => {
-  return JSON.parse(localStorage.getItem(collection))
+  return JSON.parse(localStorage.getItem(collection) as string)
 }
 export const setItem = (items = {}, key = 'user') => {
   localStorage.setItem(key, JSON.stringify(items))
