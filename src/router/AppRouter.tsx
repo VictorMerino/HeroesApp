@@ -5,6 +5,8 @@ import { HeroesRoutes } from '../heroes/routes/HeroesRoutes'
 import { AdminRoutes } from '../admin/routes/AdminRoutes'
 import { LoginPage } from '../auth'
 
+import { PrivateRoutes } from './PrivateRoutes'
+
 export const AppRouter = () => {
   return (
     <>
@@ -12,7 +14,14 @@ export const AppRouter = () => {
         <Route path="login" element={<LoginPage />} />
 
         {/* Private routes */}
-        <Route path="admin/*" element={<AdminRoutes />} />
+        <Route
+          path="admin/*"
+          element={
+            <PrivateRoutes>
+              <AdminRoutes />
+            </PrivateRoutes>
+          }
+        />
 
         {/* Public routes */}
         <Route path="/*" element={<HeroesRoutes />} />
