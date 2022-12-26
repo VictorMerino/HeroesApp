@@ -40,7 +40,7 @@ export const Navbar = () => {
           <ul className="navbar-nav ml-auto">
             <NavLink
               className="nav-item nav-link text-success"
-              to={user && user.name ? '/admin' : '/login'}
+              to={user && user.name ? '/admin' : '/auth/login'}
             >
               {user && user.name ? user.name : 'Login'}
             </NavLink>

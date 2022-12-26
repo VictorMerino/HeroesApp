@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom'
 
 import { AuthContext } from '../auth'
 
-export const PrivateRoutes = ({ children }) => {
+export const AuthRouter = ({ children }) => {
   const { logged } = useContext(AuthContext)
-  return logged ? children : <Navigate to="/" />
+  return logged ? <Navigate to="/admin" /> : children
 }

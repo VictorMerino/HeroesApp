@@ -3,15 +3,24 @@ import { Route, Routes } from 'react-router-dom'
 
 import { HeroesRoutes } from '../heroes/routes/HeroesRoutes'
 import { AdminRoutes } from '../admin/routes/AdminRoutes'
-import { LoginPage } from '../auth'
+import { AuthRoutes } from '../auth/routes/AuthRoutes'
 
+import { AuthRouter } from './AuthRouter'
 import { PrivateRoutes } from './PrivateRoutes'
 
 export const AppRouter = () => {
   return (
     <>
       <Routes>
-        <Route path="login" element={<LoginPage />} />
+        {/* Auth routes */}
+        <Route
+          path="auth/*"
+          element={
+            <AuthRouter>
+              <AuthRoutes />
+            </AuthRouter>
+          }
+        />
 
         {/* Private routes */}
         <Route
