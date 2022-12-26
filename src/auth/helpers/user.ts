@@ -9,5 +9,6 @@ export const setUser = (user = {}) => {
 }
 
 export const removeUser = () => {
+  // TO-DO: check: better this way or do we need to remove the object?
   setUser()
 }
