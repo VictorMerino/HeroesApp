@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FormEvent } from 'react'
 
 import { useForm } from '../../hooks/useForm'
 import { useNavigate, useSearchParams } from 'react-router-dom'
@@ -16,8 +16,8 @@ export const SearchPage = () => {
 
   const { searchText, onInputChange } = useForm({ searchText: q || '' })
 
-  const onSearchSubmit = (e: SubmitEvent) => {
-    e.preventDefault()
+  const onSearchSubmit = (event: FormEvent) => {
+    event.preventDefault()
     // if (searchText.trim().length < 3) return
     navigate(`?q=${searchText}`)
   }
