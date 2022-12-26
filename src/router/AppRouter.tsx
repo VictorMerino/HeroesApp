@@ -42,7 +42,6 @@ export const AppRouter = () => {
             </PublicRouter>
           }
         />
-        <Route path="/*" element={<HeroesRoutes />} />
       </Routes>
     </>
   )
