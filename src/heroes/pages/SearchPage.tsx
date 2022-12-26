@@ -14,6 +14,7 @@ export const SearchPage = () => {
   const q = searchParams.get('q')
   const heroes = getHeroesByName(q as string)
 
+  // @ts-expect-error TS2339
   const { searchText, onInputChange } = useForm({ searchText: q || '' })
 
   const onSearchSubmit = (event: FormEvent) => {

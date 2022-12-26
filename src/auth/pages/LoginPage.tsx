@@ -7,6 +7,7 @@ export const LoginPage = () => {
   const { login } = useContext(AuthContext)
 
   const onLogin = () => {
+    //@ts-expect-error TS2722
     login('Víctor')
     navigate('/admin')
   }

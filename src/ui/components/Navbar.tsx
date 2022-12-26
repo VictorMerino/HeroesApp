@@ -10,6 +10,7 @@ export const Navbar = () => {
   const { user, logout } = useContext(AuthContext)
 
   const onLogout = () => {
+    //@ts-expect-error TS2722
     logout()
     const navigateTo = checkLastPath() || '/'
     navigate(navigateTo)
