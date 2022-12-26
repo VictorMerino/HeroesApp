@@ -1,10 +1,10 @@
-import React, { useReducer } from 'react'
+import React, { ReactElement, useReducer } from 'react'
 
 import { getUser, setUser, removeUser } from '../helpers'
 
 import { AuthContext } from './AuthContext'
 import { authReducer } from './authReducer'
-import { creators } from './creators'
+import { Creators } from './types'
 
 const initialState = {
   logged: false,
@@ -20,7 +20,7 @@ const init = () => {
   }
 }
 
-export const AuthProvider = ({ children }) => {
+export const AuthProvider = ({ children }: { children: ReactElement }) => {
   const [authState, dispatch] = useReducer(authReducer, initialState, init)
 
   const login = (name = '') => {
@@ -29,7 +29,7 @@ export const AuthProvider = ({ children }) => {
       name,
     }
     const action = {
-      type: creators.login,
+      type: Creators.login,
       payload: user,
     }
     setUser(user)
@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     const action = {
-      type: creators.logout,
+      type: Creators.logout,
     }
     removeUser()
     dispatch(action)

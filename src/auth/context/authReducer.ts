@@ -1,17 +1,13 @@
-import { creators } from './creators'
+import { AuthAction, Creators } from './types'
 
-const initialState = {
-  logged: false,
-  name: null,
-}
-export const authReducer = (state = {}, action) => {
+export const authReducer = (state = {}, action: AuthAction) => {
   switch (action.type) {
-    case creators.login:
+    case Creators.login:
       return {
         logged: true,
         user: action.payload,
       }
-    case creators.logout:
+    case Creators.logout:
       return {
         logged: false,
         user: null,
