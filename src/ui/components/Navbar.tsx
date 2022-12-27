@@ -23,7 +23,19 @@ export const Navbar = () => {
           <HomeIcon />
         </Link>
 
-        <div className="navbar-collapse">
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        <div className="navbar-collapse collapse" id="navbarSupportedContent">
           <div className="navbar-nav">
             <NavLink className="nav-item nav-link" to="/marvel">
               Marvel
@@ -37,23 +49,23 @@ export const Navbar = () => {
               Search
             </NavLink>
           </div>
-        </div>
 
-        <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 justify-content-end">
-          <ul className="navbar-nav ml-auto">
-            <NavLink
-              className="nav-item nav-link text-success"
-              to={user && user.name ? '/admin' : '/auth/login'}
-            >
-              {user && user.name ? user.name : 'Login'}
-            </NavLink>
-            <button
-              className="nav-item nav-link btn btn-outline-success"
-              onClick={() => onLogout()}
-            >
-              Logout
-            </button>
-          </ul>
+          <div className="w-100 order-3 dual-collapse2 d-sm-flex justify-content-end">
+            <ul className="navbar-nav ml-auto">
+              <NavLink
+                className="nav-item nav-link text-success"
+                to={user && user.name ? '/admin' : '/auth/login'}
+              >
+                {user && user.name ? user.name : 'Login'}
+              </NavLink>
+              <button
+                className="nav-item nav-link btn btn-outline-success"
+                onClick={() => onLogout()}
+              >
+                Logout
+              </button>
+            </ul>
+          </div>
         </div>
       </div>
     </nav>
