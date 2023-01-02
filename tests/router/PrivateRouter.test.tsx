@@ -34,7 +34,6 @@ describe('<PrivateRouter>', () => {
       </AuthContext.Provider>
     )
 
-    screen.debug()
     expect(screen.getByText('Home page')).toBeTruthy()
   })
 })
