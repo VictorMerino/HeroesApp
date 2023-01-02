@@ -1,24 +1,12 @@
-/**
- * Login should call login, login and set the user
- * Logout should delete user name and logged to false
- */
-
 import { authReducer } from '../../../src/auth/context'
 import { Creators } from '../../../src/auth/context/types'
+import {
+  DEMO_USER,
+  EMPTY_STATE,
+  LOGGED_STATE,
+  UNLOGGED_STATE,
+} from '../../helpers/auth'
 
-const EMPTY_STATE = {}
-const DEMO_USER = {
-  name: 'Victorius',
-  id: 'AAA',
-}
-const LOGGED_STATE = {
-  user: DEMO_USER,
-  logged: true,
-}
-const UNLOGGED_STATE = {
-  user: null,
-  logged: false,
-}
 describe('authReducer', () => {
   test('should return default state if no action provided', () => {
     const INITIAL_STATE = EMPTY_STATE
