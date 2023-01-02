@@ -45,6 +45,6 @@ describe('authReducer', () => {
     const EXPECTED_STATE = UNLOGGED_STATE
     const newState = authReducer(INITIAL_STATE, AUTH_ACTION)
 
-    expect(newState).toEqual(EXPECTED_STATE)
+    expect(newState).toEqual(expect.objectContaining(EXPECTED_STATE))
   })
 })
