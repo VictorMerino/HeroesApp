@@ -62,6 +62,7 @@ export const Navbar = () => {
               <button
                 className="nav-item nav-link btn btn-outline-success"
                 onClick={() => onLogout()}
+                data-testid="logout-button"
               >
                 Logout
               </button>
