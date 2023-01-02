@@ -36,7 +36,9 @@ export const HeroCard = ({ hero }: { hero: Hero }) => {
             </div>
             <div className="col-8">
               <div className="card-body">
-                <h5 className="card-title">{superhero}</h5>
+                <h5 className="card-title" data-testid="hero-title">
+                  {superhero}
+                </h5>
                 <p className="card-text">{alter_ego}</p>
                 <CharactersByEgo
                   alter_ego={alter_ego}

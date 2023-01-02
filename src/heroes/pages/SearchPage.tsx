@@ -51,7 +51,10 @@ export const SearchPage = () => {
             )}
 
             {q && !heroes.length && (
-              <div className="alert alert-danger animate__animated animate__fadeIn">
+              <div
+                className="alert alert-danger animate__animated animate__fadeIn"
+                data-testid="hero-not-found"
+              >
                 No hero with <strong>{q}</strong>
               </div>
             )}
