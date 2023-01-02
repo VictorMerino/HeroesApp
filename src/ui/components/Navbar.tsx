@@ -55,6 +55,7 @@ export const Navbar = () => {
               <NavLink
                 className="nav-item nav-link text-success"
                 to={user && user.name ? '/admin' : '/auth/login'}
+                data-testid="user-button"
               >
                 {user && user.name ? user.name : 'Login'}
               </NavLink>
