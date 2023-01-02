@@ -23,6 +23,7 @@ jest.mock('react-router-dom', () => ({
 
 describe('<AppRouter>', () => {
   beforeEach(() => jest.clearAllMocks())
+
   // TODO: check if these test should be in another file...
   test('should return children if not logged', () => {
     render(renderPublicRoute(UNLOGGED_STATE))

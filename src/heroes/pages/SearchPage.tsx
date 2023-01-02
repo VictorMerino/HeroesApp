@@ -29,7 +29,10 @@ export const SearchPage = () => {
           <div className="col-12 col-sm-4">
             <h2>Search</h2>
             <hr />
-            <form onSubmit={onSearchSubmit}>
+            <form role="form" onSubmit={onSearchSubmit}>
+              <label htmlFor="search-input" className="visually-hidden">
+                Search here
+              </label>
               <input
                 className="form-control"
                 placeholder="Search..."
@@ -37,6 +40,7 @@ export const SearchPage = () => {
                 autoComplete="off"
                 value={searchText}
                 onChange={onInputChange}
+                id="search-input"
               />
             </form>
           </div>
