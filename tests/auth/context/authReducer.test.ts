@@ -23,13 +23,17 @@ describe('authReducer', () => {
   test('should return default state if no action provided', () => {
     const INITIAL_STATE = EMPTY_STATE
     const newState = authReducer(INITIAL_STATE)
+
     expect(newState).toBe(INITIAL_STATE)
   })
+
   test('should return default state if null action provided', () => {
     const INITIAL_STATE = EMPTY_STATE
     const newState = authReducer(INITIAL_STATE, null)
+
     expect(newState).toBe(INITIAL_STATE)
   })
+
   test('should call login and set the user on Login', () => {
     const INITIAL_STATE = EMPTY_STATE
     const USER = DEMO_USER
@@ -40,8 +44,10 @@ describe('authReducer', () => {
     }
     const EXPECTED_STATE = LOGGED_STATE
     const newState = authReducer(INITIAL_STATE, AUTH_ACTION)
+
     expect(newState).toEqual(EXPECTED_STATE)
   })
+
   test('should delete user name and set logged to false on Logout', () => {
     // const USER = DEMO_USER
     const INITIAL_STATE = LOGGED_STATE
@@ -50,6 +56,7 @@ describe('authReducer', () => {
     }
     const EXPECTED_STATE = UNLOGGED_STATE
     const newState = authReducer(INITIAL_STATE, AUTH_ACTION)
+
     expect(newState).toEqual(EXPECTED_STATE)
   })
 })
